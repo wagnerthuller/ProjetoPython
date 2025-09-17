@@ -41,4 +41,47 @@ ProjetoPython/
   - pandas
 
 ---
+▶️ Como Executar
+Ajuste o e-mail e senha no arquivo codigo.py.
 
+Verifique se o Chrome está instalado e acessível.
+
+Ajuste as coordenadas dos cliques com:
+
+python
+import pyautogui, time
+time.sleep(5)
+print(pyautogui.position())
+Execute o script:
+
+bash
+python codigo.py
+⚠️ Não mexa no mouse ou teclado durante a execução. Mantenha o Chrome em foco e evite mudar o zoom ou layout da página.
+
+🧩 Sobre o auxilia.py
+Este arquivo contém funções auxiliares que podem incluir:
+
+Validação de dados
+
+Conversão de tipos
+
+Tratamento de campos vazios
+
+Funções reutilizáveis para o codigo.py
+
+✅ Dicas
+Ative o fail-safe do PyAutoGUI:
+
+python
+pyautogui.FAILSAFE = True  # mover o mouse para o canto superior esquerdo aborta
+pyautogui.PAUSE = 1        # intervalo entre ações
+Ajuste tempos de espera com time.sleep() para garantir que a página carregue corretamente.
+
+Para tratar campos NaN no CSV:
+
+python
+import math
+obs = tabela.loc[linha, "obs"]
+if not (isinstance(obs, float) and math.isnan(obs)):
+    pyautogui.write(str(obs))
+📌 Licença
